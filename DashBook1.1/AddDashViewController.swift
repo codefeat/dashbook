@@ -23,6 +23,7 @@ class AddDashViewController: UIViewController {
     
 
     @IBAction func addDashBtn(_ sender: UIButton) {
+ /*
         let dash = Dash();
         dash.name = dashText.text!
         dash.rock = rockSwitch.isOn
@@ -31,6 +32,20 @@ class AddDashViewController: UIViewController {
         previousVC.tableView.reloadData();
         
         navigationController?.popViewController(animated: true)
+      */
+        
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            let dash = DashCoreData(entity: DashCoreData.entity(), insertInto: context)
+            
+            if let dashText = dashText.text {
+                dash.name = dashText
+                dash.rock = rockSwitch.isOn
+            }
+           
+            try? context.save();
+            navigationController?.popViewController(animated: true)
+        }
+        
         
         
     }

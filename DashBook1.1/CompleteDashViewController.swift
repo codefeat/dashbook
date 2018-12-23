@@ -12,17 +12,28 @@ class CompleteDashViewController: UIViewController {
 
     var previousVC = DashBookTableViewController();
     
-    var selectedDash = Dash();
+    var selectedDash : DashCoreData?;
     
     @IBOutlet weak var dashCompleteLbl: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       dashCompleteLbl.text = selectedDash.name
+       dashCompleteLbl.text = selectedDash?.name
     }
     
 
     @IBAction func dashCompleteBtn(_ sender: UIButton) {
+        
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            
+            if let theDash = selectedDash {
+                context.delete(theDash)
+                navigationController?.popViewController(animated: true);
+            }
+            
+        }
+        
+        /*
         var index = 0
         for dash in previousVC.dashes {
             if dash.name == selectedDash.name {
@@ -33,7 +44,7 @@ class CompleteDashViewController: UIViewController {
                 break;
             }
             index += 1
-        }
+        } */
     }
     
 

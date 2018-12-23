@@ -10,12 +10,29 @@ import UIKit
 
 class DashBookTableViewController: UITableViewController {
     
-    var dashes : [Dash] = [];
+    var dashes : [DashCoreData] = [];
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        dashes = createDashes();
+        //dashes = createDashes();
+       
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+         getDashes();
+    }
+    
+    func getDashes() {
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            if let coreDataDashes = try? context.fetch(DashCoreData.fetchRequest()) as? [DashCoreData] {
+                if let theDashes = coreDataDashes {
+                    dashes = theDashes
+                    tableView.reloadData();
+                }
+                
+            }
+        }
     }
 
     // MARK: - Table view data source
@@ -55,13 +72,15 @@ class DashBookTableViewController: UITableViewController {
         // Configure the cell...
         let dash = dashes[indexPath.row];
         
-        if dash.rock {
-            cell.textLabel?.text = "❗️" +  dash.name;
-        }else{
-            cell.textLabel?.text = "💧" + dash.name;
+        if let name = dash.name {
+        
+            if dash.rock {
+                cell.textLabel?.text = "❗️" +  name;
+            }else{
+                cell.textLabel?.text = "💧" + name;
+            }
+        
         }
-        
-        
 
         return cell
     }
@@ -79,7 +98,7 @@ class DashBookTableViewController: UITableViewController {
         
         if let completeVC = segue.destination as? CompleteDashViewController {
             
-            if let dash = sender as? Dash {
+            if let dash = sender as? DashCoreData {
                 completeVC.selectedDash = dash
                 completeVC.previousVC = self;
             }
