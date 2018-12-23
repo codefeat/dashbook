@@ -1,24 +1,185 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wZn-gO-gRy">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--DashBook-->
+        <scene sceneID="m6a-eK-Fbe">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tableViewController id="tA1-nF-lNy" customClass="DashBookTableViewController" customModule="DashBook1_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WgS-wA-Odr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dashCell" id="Ghf-6B-uSi">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ghf-6B-uSi" id="Ouv-xa-3Xg">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="tA1-nF-lNy" id="auv-fW-gXS"/>
+                            <outlet property="delegate" destination="tA1-nF-lNy" id="jTF-n8-8SI"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="DashBook" id="COs-Y4-Een">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rBD-NE-W59">
+                            <connections>
+                                <segue destination="0Qf-GR-EyN" kind="show" id="Abx-Od-mfT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="xq5-jF-Udf" kind="show" identifier="goToComplete" id="cDp-Dr-9vM"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h68-xD-6JB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="448.80000000000001" y="-241.52923538230885"/>
+        </scene>
+        <!--Complete Dash View Controller-->
+        <scene sceneID="XeI-3b-CWj">
+            <objects>
+                <viewController id="xq5-jF-Udf" customClass="CompleteDashViewController" customModule="DashBook1_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pMs-uw-vdP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pw1-vz-0Jf">
+                                <rect key="frame" x="16" y="127" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="5r3-3L-7ik"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2h-QQ-lO6">
+                                <rect key="frame" x="106" y="176" width="163" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Complete DASH">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dashCompleteBtn:" destination="xq5-jF-Udf" eventType="touchUpInside" id="IWP-dw-FC8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="h2h-QQ-lO6" firstAttribute="top" secondItem="pw1-vz-0Jf" secondAttribute="bottom" constant="28" id="2JR-2d-L8S"/>
+                            <constraint firstItem="pw1-vz-0Jf" firstAttribute="centerX" secondItem="h2h-QQ-lO6" secondAttribute="centerX" id="7le-e7-YpX"/>
+                            <constraint firstItem="pw1-vz-0Jf" firstAttribute="top" secondItem="BOJ-Xk-F7r" secondAttribute="top" constant="63" id="QOX-B3-Vc8"/>
+                            <constraint firstItem="pw1-vz-0Jf" firstAttribute="trailing" secondItem="pMs-uw-vdP" secondAttribute="trailingMargin" id="iRh-8K-fq2"/>
+                            <constraint firstItem="h2h-QQ-lO6" firstAttribute="leading" secondItem="BOJ-Xk-F7r" secondAttribute="leading" constant="106" id="tWq-Ad-Wkp"/>
+                            <constraint firstItem="pw1-vz-0Jf" firstAttribute="leading" secondItem="pMs-uw-vdP" secondAttribute="leadingMargin" id="waN-Sz-9la"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BOJ-Xk-F7r"/>
+                    </view>
+                    <connections>
+                        <outlet property="dashCompleteLbl" destination="pw1-vz-0Jf" id="YR4-Vl-5Nb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bjn-RX-4fV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="449" y="491"/>
+        </scene>
+        <!--Add Dash View Controller-->
+        <scene sceneID="shu-19-K9e">
+            <objects>
+                <viewController id="0Qf-GR-EyN" customClass="AddDashViewController" customModule="DashBook1_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tqV-Ow-5k4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U63-sx-Rdr">
+                                <rect key="frame" x="110" y="170" width="154" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Rock (Important)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmP-zX-iHE">
+                                <rect key="frame" x="110" y="242" width="154" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your DASH" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Sw-xS-dEN">
+                                <rect key="frame" x="16" y="199" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XXt-UM-nWI">
+                                <rect key="frame" x="163" y="271" width="51" height="31"/>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1R-1Z-DZZ">
+                                <rect key="frame" x="106" y="335" width="161" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Add Your DASH">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addDashBtn:" destination="0Qf-GR-EyN" eventType="touchUpInside" id="PDo-cK-wYk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xmP-zX-iHE" firstAttribute="centerX" secondItem="XXt-UM-nWI" secondAttribute="centerX" id="1FX-Bs-euW"/>
+                            <constraint firstItem="D1R-1Z-DZZ" firstAttribute="top" secondItem="XXt-UM-nWI" secondAttribute="bottom" constant="33" id="8iH-a0-uq3"/>
+                            <constraint firstItem="xmP-zX-iHE" firstAttribute="top" secondItem="1Sw-xS-dEN" secondAttribute="bottom" constant="13" id="GKO-Uj-JPQ"/>
+                            <constraint firstItem="XXt-UM-nWI" firstAttribute="top" secondItem="xmP-zX-iHE" secondAttribute="bottom" constant="8" symbolic="YES" id="Kg9-XW-aVH"/>
+                            <constraint firstItem="U63-sx-Rdr" firstAttribute="leading" secondItem="iCq-yt-IFD" secondAttribute="leading" constant="110" id="LgR-qa-xYP"/>
+                            <constraint firstItem="D1R-1Z-DZZ" firstAttribute="leading" secondItem="iCq-yt-IFD" secondAttribute="leading" constant="106" id="LyF-IA-pjM"/>
+                            <constraint firstItem="U63-sx-Rdr" firstAttribute="trailing" secondItem="xmP-zX-iHE" secondAttribute="trailing" id="ddo-1L-5XB"/>
+                            <constraint firstItem="1Sw-xS-dEN" firstAttribute="top" secondItem="U63-sx-Rdr" secondAttribute="bottom" constant="8" symbolic="YES" id="fA5-ia-9RM"/>
+                            <constraint firstItem="U63-sx-Rdr" firstAttribute="top" secondItem="iCq-yt-IFD" secondAttribute="top" constant="106" id="kNK-Uv-vET"/>
+                            <constraint firstItem="1Sw-xS-dEN" firstAttribute="leading" secondItem="tqV-Ow-5k4" secondAttribute="leadingMargin" id="nOc-XI-M2S"/>
+                            <constraint firstItem="1Sw-xS-dEN" firstAttribute="trailing" secondItem="tqV-Ow-5k4" secondAttribute="trailingMargin" id="qbY-3A-Bg5"/>
+                            <constraint firstItem="U63-sx-Rdr" firstAttribute="centerX" secondItem="1Sw-xS-dEN" secondAttribute="centerX" id="thC-SC-zNs"/>
+                            <constraint firstItem="U63-sx-Rdr" firstAttribute="leading" secondItem="xmP-zX-iHE" secondAttribute="leading" id="vZE-vn-gwq"/>
+                            <constraint firstItem="xmP-zX-iHE" firstAttribute="centerX" secondItem="D1R-1Z-DZZ" secondAttribute="centerX" id="xcU-8B-4Xx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iCq-yt-IFD"/>
+                    </view>
+                    <connections>
+                        <outlet property="dashText" destination="1Sw-xS-dEN" id="eUV-QI-q6W"/>
+                        <outlet property="rockSwitch" destination="XXt-UM-nWI" id="sm3-Vz-Rhc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z5a-DH-JY5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1148" y="-241.52923538230885"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rmU-ND-8wg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wZn-gO-gRy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="crK-QX-wjR">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tA1-nF-lNy" kind="relationship" relationship="rootViewController" id="Qth-gh-tOa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D1d-fv-eiE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-490.39999999999998" y="-241.52923538230885"/>
         </scene>
     </scenes>
 </document>

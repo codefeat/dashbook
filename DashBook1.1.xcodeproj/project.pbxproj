@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		7A52D28021CFEDB400ECD054 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A52D27F21CFEDB400ECD054 /* AppDelegate.swift */; };
-		7A52D28221CFEDB400ECD054 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A52D28121CFEDB400ECD054 /* ViewController.swift */; };
 		7A52D28521CFEDB400ECD054 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A52D28321CFEDB400ECD054 /* Main.storyboard */; };
 		7A52D28821CFEDB400ECD054 /* DashBook1_1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A52D28621CFEDB400ECD054 /* DashBook1_1.xcdatamodeld */; };
 		7A52D28A21CFEDB500ECD054 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A52D28921CFEDB500ECD054 /* Assets.xcassets */; };
 		7A52D28D21CFEDB500ECD054 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A52D28B21CFEDB500ECD054 /* LaunchScreen.storyboard */; };
 		7A52D29821CFEDB500ECD054 /* DashBook1_1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A52D29721CFEDB500ECD054 /* DashBook1_1Tests.swift */; };
 		7A52D2A321CFEDB500ECD054 /* DashBook1_1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A52D2A221CFEDB500ECD054 /* DashBook1_1UITests.swift */; };
+		7A52D2B121CFF07000ECD054 /* DashBookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A52D2B021CFF07000ECD054 /* DashBookTableViewController.swift */; };
+		7A52D2B321CFF15100ECD054 /* Dash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A52D2B221CFF15100ECD054 /* Dash.swift */; };
+		7A52D2B521D004AC00ECD054 /* AddDashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A52D2B421D004AC00ECD054 /* AddDashViewController.swift */; };
+		7A52D2B721D00ED800ECD054 /* CompleteDashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A52D2B621D00ED800ECD054 /* CompleteDashViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +40,6 @@
 /* Begin PBXFileReference section */
 		7A52D27C21CFEDB400ECD054 /* DashBook1.1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DashBook1.1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A52D27F21CFEDB400ECD054 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7A52D28121CFEDB400ECD054 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7A52D28421CFEDB400ECD054 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7A52D28721CFEDB400ECD054 /* DashBook1_1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DashBook1_1.xcdatamodel; sourceTree = "<group>"; };
 		7A52D28921CFEDB500ECD054 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +51,10 @@
 		7A52D29E21CFEDB500ECD054 /* DashBook1.1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DashBook1.1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A52D2A221CFEDB500ECD054 /* DashBook1_1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBook1_1UITests.swift; sourceTree = "<group>"; };
 		7A52D2A421CFEDB500ECD054 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A52D2B021CFF07000ECD054 /* DashBookTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBookTableViewController.swift; sourceTree = "<group>"; };
+		7A52D2B221CFF15100ECD054 /* Dash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dash.swift; sourceTree = "<group>"; };
+		7A52D2B421D004AC00ECD054 /* AddDashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDashViewController.swift; sourceTree = "<group>"; };
+		7A52D2B621D00ED800ECD054 /* CompleteDashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteDashViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +106,10 @@
 			isa = PBXGroup;
 			children = (
 				7A52D27F21CFEDB400ECD054 /* AppDelegate.swift */,
-				7A52D28121CFEDB400ECD054 /* ViewController.swift */,
+				7A52D2B021CFF07000ECD054 /* DashBookTableViewController.swift */,
+				7A52D2B421D004AC00ECD054 /* AddDashViewController.swift */,
+				7A52D2B621D00ED800ECD054 /* CompleteDashViewController.swift */,
+				7A52D2B221CFF15100ECD054 /* Dash.swift */,
 				7A52D28321CFEDB400ECD054 /* Main.storyboard */,
 				7A52D28921CFEDB500ECD054 /* Assets.xcassets */,
 				7A52D28B21CFEDB500ECD054 /* LaunchScreen.storyboard */,
@@ -259,8 +268,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A52D28221CFEDB400ECD054 /* ViewController.swift in Sources */,
 				7A52D28821CFEDB400ECD054 /* DashBook1_1.xcdatamodeld in Sources */,
+				7A52D2B521D004AC00ECD054 /* AddDashViewController.swift in Sources */,
+				7A52D2B321CFF15100ECD054 /* Dash.swift in Sources */,
+				7A52D2B121CFF07000ECD054 /* DashBookTableViewController.swift in Sources */,
+				7A52D2B721D00ED800ECD054 /* CompleteDashViewController.swift in Sources */,
 				7A52D28021CFEDB400ECD054 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
